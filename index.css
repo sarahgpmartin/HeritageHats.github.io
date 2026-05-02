@@ -511,6 +511,7 @@ footer .copyright {
 
   body {
     overflow-x: hidden;
+    margin-top: 0px;
   }
 
   img {
