@@ -257,6 +257,11 @@ nav .shop:hover {
   font-family: "Georgia", serif;
   font-size: 15px;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.hat-filters button:hover {
+  text-decoration: underline;
 }
 
 /* ----- HAT GRID ----- */
@@ -272,8 +277,6 @@ nav .shop:hover {
   height: auto;
   display: block;
 }
-
-/* ----- HAT GRID ----- */
 
 .hat-grid {
   display: grid;
@@ -294,6 +297,31 @@ nav .shop:hover {
 
 .hat {
   background: #f2f2f2;
+}
+
+.hat-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.hat-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hat-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(6, 4, 8, 0.5); /* #060408 at 50% */
+
+  transition: background 0.3s ease;
+}
+
+.hat-item:hover::after {
+  background: rgba(6, 4, 8, 0.25);
 }
 
 /* ----- ----- ----- ----- ----- SERVICE SECTION ----- ----- ----- ----- ----- */
@@ -478,6 +506,15 @@ footer .copyright {
 
 /* HEADER */
 
+  body {
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   header {
     margin-top: 0px;
   }
@@ -553,42 +590,44 @@ footer .copyright {
     width: 50%;
   }
 
-/* HAT SECTION */
+  /* HAT SECTION */
 
+  
 #hats {
   padding: 50px;
+  overflow: hidden;
 }
 
 .hat-filters {
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .hat-filters button {
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 12px;
 }
 
 .hat-grid {
   display: flex;
-  gap: 25px;
+  gap: 20px;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 
-  margin: 0;
-  padding: 0;
-
-  scroll-padding-left: 50px;
+  padding: 0 25px;
 }
 
-.hat-grid img {
-  flex: 0 0 80%;
-  height: auto;
-  width: 100%;
-
+.hat-item {
+  flex: 0 0 85%;
   scroll-snap-align: center;
+}
+
+.hat-item img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -603,7 +642,6 @@ footer .copyright {
     gap: 25px;
   }
 
-  /* each video card */
   #video .video-grid a {
     display: flex;
     flex-direction: column;
@@ -635,3 +673,17 @@ footer .copyright {
 
 }
 
+/* ----- ----- ----- ----- ----- COLOR PALETTE ----- ----- ----- ----- ----- */
+
+/* #F8F6FB WHITE */
+
+/* #060408 BLACK */
+
+/* #7851A9 ROYAL PURPLE */
+
+/* rgba(120, 81, 169, 0.5) 50% ROYAL PURPLE */
+
+
+/* 3C2955 DARK ROYAL PURPLE */
+
+/* #BBA8D4 LIGHT ROYAL PURPLE */
